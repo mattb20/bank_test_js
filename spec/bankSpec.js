@@ -12,7 +12,7 @@ var bank_module = require("../bank.js");
 describe("On opening a new account at the bank", function() {
   it("has a balance of 0", function() {
     var bank = new bank_module();
-    expect(bank.balance).toBe(0);
+    expect(bank.balance()).toBe(0);
   })
 });
 describe("Making a deposit at the bank", function() {
@@ -26,7 +26,7 @@ describe("Making a deposit at the bank", function() {
     // act
     bank.deposit(10);
     // assert
-    expect(bank.balance).toBe(10);
+    expect(bank.balance()).toBe(10);
   });
   describe("it has a method that will detect whether a user has entered a non numerical value", function() {
     // arrange
