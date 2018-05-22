@@ -27,6 +27,13 @@ describe("Making a deposit at the bank", function() {
     bank.deposit(10);
     // assert
     expect(bank.balance).toBe(10);
-
+  });
+  describe("it has a method that will detect whether a user has entered a non numerical value", function() {
+    // arrange
+    var bank = new bank_module();
+    // act
+    let this_is_not_a_number = bank.is_numerical_value('ab-');
+    // assert
+    expect(this_is_not_a_number).toBe(false);
   });
 });
