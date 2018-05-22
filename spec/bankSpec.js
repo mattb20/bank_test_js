@@ -20,4 +20,13 @@ describe("Making a deposit at the bank", function() {
     var bank = new bank_module();
     expect(typeof bank.deposit).toBe('function');
   })
+  it("increases the balance of the bank by a given amount", function() {
+    // arrange
+    var bank = new bank_module();
+    // act
+    bank.deposit(10);
+    // assert
+    expect(bank.balance).toBe(10);
+
+  });
 });
