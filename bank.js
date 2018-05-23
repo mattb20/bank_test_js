@@ -1,10 +1,19 @@
+'use strict';
 function Bank() {
-  balance = 0;
-};
-Bank.prototype.deposit = function(amount) {
-  balance += amount;
-}
-Bank.prototype.balance = function() {
-  return balance;
-}
-module.exports = Bank;
+    this.balance = 0;
+  };
+  Bank.prototype.deposit = (function(amount) {
+    this.balance += amount;
+  });
+  Bank.prototype.balance = (function() {
+    return this.balance;
+  });
+  Bank.prototype.is_numerical_value = (function(value) {
+    var regex = new RegExp(value);
+    if (value.match(regex) !== true) {
+      return false
+    }
+    else {
+      return true
+    }
+  })
