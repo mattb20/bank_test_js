@@ -28,7 +28,7 @@ describe('Transaction', function() {
     transaction = new Transaction('deposit', 10);
     expect(transaction.amount).toEqual(10);
   });
-  it('has a function that will return the transaction type', function(){
+  it('has a function that will return the transaction type', function() {
     transaction = new Transaction('deposit', 10);
     expect(transaction.transaction_type).toEqual('deposit');
   })
@@ -39,4 +39,10 @@ describe('Transaction', function() {
       // assert
       expect(transaction.is_numerical_value('ab-')).toBe(false);
   });
+  it('has a method that will confirm to the user that the confirmation was successful', function() {
+    // arrange
+    transaction = new Transaction('deposit', 10);
+    // assert
+    expect(transaction.confirm_transaction('deposit', 10).toEqual('Deposit of £10 successful'));
+  })
 })

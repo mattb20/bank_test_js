@@ -31,4 +31,5 @@ Transaction.prototype.is_numerical_value = (function(value) {
   else {
     return true
   }
+  
 });
