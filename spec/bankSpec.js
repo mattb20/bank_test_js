@@ -6,7 +6,14 @@ describe('Bank', function() {
     expect(bank.balance).toEqual(0);
   });
   it("has a function that will allow you to make a deposit at the bank", function() {
-      expect(typeof bank.deposit).toBe('function');
+    expect(typeof bank.deposit).toBe('function');
+  });
+  it('it increases the bank balance by a given amount as long as it is a numeriacl value', function() {
+    // arrange
+    bank.deposit(10);
+    // assert
+    expect(bank.balance).toEqual(10);
+
   });
 });
 describe('Transaction', function() {
@@ -21,7 +28,11 @@ describe('Transaction', function() {
     transaction = new Transaction('deposit', 10);
     expect(transaction.amount).toEqual(10);
   });
-  it("it has a method that will detect whether a user has entered a non numerical value", function() {
+  it('has a function that will return the transaction type', function(){
+    transaction = new Transaction('deposit', 10);
+    expect(transaction.transaction_type).toEqual('deposit');
+  })
+  it('it has a method that will detect whether a user has entered a non numerical value', function() {
       // arrange
       transaction = new Transaction('deposit', 10);
       // act
