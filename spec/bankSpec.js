@@ -43,6 +43,6 @@ describe('Transaction', function() {
     // arrange
     transaction = new Transaction('deposit', 10);
     // assert
-    expect(transaction.confirm_transaction('deposit', 10).toEqual('Deposit of £10 successful'));
+    expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
   })
 })

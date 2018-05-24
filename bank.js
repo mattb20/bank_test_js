@@ -31,5 +31,9 @@ Transaction.prototype.is_numerical_value = (function(value) {
   else {
     return true
   }
-  
+});
+Transaction.prototype.confirm_transaction = (function(transaction_type, amount) {
+  if (transaction_type === 'Deposit') {
+    return (transaction_type + ' of ' + '£' + amount.toString() + ' successful');
+  }
 });
