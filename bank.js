@@ -1,15 +1,17 @@
 'use strict';
-var transaction = require('./transaction')
-function Bank() {
+var transaction = require("./transaction");
+module.exports = class Bank {
+  constructor() {
     this.balance = 0;
   };
-Bank.prototype.deposit = (function(amount) {
+deposit(amount) {
     transaction = new Transaction('deposit', amount);
     if (transaction.is_numerical_value(amount.toString()) === true){
       this.balance += amount;
     };
 
-  });
-Bank.prototype.balance = (function() {
+  };
+balance(){
     return this.balance;
-  });
+  };
+}

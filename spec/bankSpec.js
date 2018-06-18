@@ -1,3 +1,4 @@
+var Bank = require("../bank");
 describe('Bank', function() {
   beforeEach(function() {
     bank = new Bank();

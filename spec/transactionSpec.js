@@ -1,6 +1,8 @@
+var Transaction = require("../transaction")
+var Bank = require("../bank")
 describe('Transaction', function() {
   beforeEach(function(){
-    bank = new Bank();
+    var bank = new Bank();
   });
   it('has a function that will return the transaction type', function() {
     transaction = new Transaction('deposit', 10);
