@@ -1,5 +1,5 @@
 'use strict';
-var transaction;
+var transaction = require('./transaction')
 function Bank() {
     this.balance = 0;
   };
@@ -13,27 +13,3 @@ Bank.prototype.deposit = (function(amount) {
 Bank.prototype.balance = (function() {
     return this.balance;
   });
-function Transaction(transaction_type, amount) {
-  this.transaction_type = transaction_type;
-  this.amount = amount;
-}
-Transaction.prototype.transaction_type = (function() {
-  return this.transaction_type;
-})
-Transaction.prototype.amount = (function() {
-  return this.amount;
-});
-Transaction.prototype.is_numerical_value = (function(value) {
-  var regex = new RegExp('[a-z-]');
-  if (value.match(regex) !== null) {
-    return false
-  }
-  else {
-    return true
-  }
-});
-Transaction.prototype.confirm_transaction = (function(transaction_type, amount) {
-  if (transaction_type === 'Deposit') {
-    return (transaction_type + ' of ' + '£' + amount.toString() + ' successful');
-  }
-});
