@@ -4,7 +4,9 @@
   "description": "",
   "main": "bank.js",
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "jasmine-node spec",
+    "lint": "./node_modules/.bin/eslint .",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
