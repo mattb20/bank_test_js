@@ -11,7 +11,7 @@ deposit(amount) {
     };
 
   };
-balance(){
-    return this.balance;
+print_balance(){
+    return 'Current balance: £' + this.balance;
   };
 }

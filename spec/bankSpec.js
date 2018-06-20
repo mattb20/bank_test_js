@@ -17,4 +17,11 @@ describe('Bank', function() {
     expect(bank.balance).toEqual(10);
 
   });
+  it('has a function that will print the curent balance of the bank', function() {
+    // arrange
+    bank.deposit(10);
+    // assert
+    expect(bank.print_balance()).toEqual('Current balance: £10');
+
+  });
 });
