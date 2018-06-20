@@ -8,6 +8,8 @@ deposit(amount) {
     var transaction = new Transaction('deposit', amount);
     if (transaction.is_numerical_value(amount.toString()) === true){
       this.balance += amount;
+    } else {
+      console.log('You can only deposit numerical amounts!');
     };
 
   };

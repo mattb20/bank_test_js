@@ -25,11 +25,11 @@ describe('Bank', function() {
     expect(bank.print_balance()).toEqual('Current balance: £10');
 
   });
-  it('prints a confirmation of a successful deposit', function() {
-    // arrange
-    make_deposit(bank, 5);
+  it('does not allow user to deposit non numerical values', function() {
     // assert
-    expect(bank.print_balance()).toEqual('Current balance: £10');
+    spyOn(console, 'log');
+    make_deposit(bank, 'this_is_not_a_number');
+    expect(console.log).toHaveBeenCalledWith('You can only deposit numerical amounts!');
 
   });
 });
