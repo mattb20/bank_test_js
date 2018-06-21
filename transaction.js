@@ -19,9 +19,8 @@ module.exports = class Transaction {
     }
   };
   confirm_transaction(transaction_type, amount) {
-    if (transaction_type === 'Deposit') {
       return (transaction_type + ' of ' + '£' + amount.toString() + ' successful');
-    }
+
   };
 
 }

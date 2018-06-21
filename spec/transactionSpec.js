@@ -24,4 +24,8 @@ describe('Transaction', function() {
     // assert
     expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
   })
+  it('has a method that will confirm to the user that the confirmation was successful', function() {
+    // assert
+    expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
+  })
 })
