@@ -31,9 +31,12 @@ describe('Transaction', function() {
   it('has a method that will withdraw a given amount from a bank balance', function() {
     // arrange
     let bank = new Bank();
+    let transaction = new Transaction('withdraw', 5);
     bank.balance = 10;
+    // act
+    transaction.make_transaction('withdraw', 5, bank);
     // assert
-    expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
+    expect(bank.balance).toEqual(5);
   });
   // it('has a method that will return false when passed an amount greater than the bank balance', function() {
   //   // arrange
