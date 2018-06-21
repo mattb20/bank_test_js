@@ -1,5 +1,5 @@
 module.exports = class Transaction {
-  constructor(transaction_type, amount) {
+  constructor(transaction_type, amount, bank) {
     this.transaction_type = transaction_type;
     this.amount = amount;
   }
@@ -18,9 +18,14 @@ module.exports = class Transaction {
       return true
     }
   };
+  make_transaction(transaction_type, amount, bank) {
+    if (this.transaction_type == 'deposit')
+    {
+      bank.balance += amount;
+    }
+  };
   confirm_transaction(transaction_type, amount) {
       return (transaction_type + ' of ' + '£' + amount.toString() + ' successful');
-
   };
 
 }

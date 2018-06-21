@@ -5,9 +5,10 @@ module.exports = class Bank {
     this.balance = 0;
   };
 deposit(amount) {
-    var transaction = new Transaction('deposit', amount);
+    var bank = this;
+    var transaction = new Transaction('deposit', amount, bank);
     if (transaction.is_numerical_value(amount.toString()) === true){
-      this.balance += amount;
+      transaction.make_transaction('deposit', amount, bank);
       transaction.confirm_transaction('Deposit', amount)
     } else {
       console.log('You can only deposit numerical amounts!');

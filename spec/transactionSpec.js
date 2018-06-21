@@ -23,9 +23,22 @@ describe('Transaction', function() {
   it('has a method that will confirm to the user that the confirmation was successful', function() {
     // assert
     expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
-  })
+  });
   it('has a method that will confirm to the user that the confirmation was successful', function() {
     // assert
     expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
-  })
+  });
+  it('has a method that will withdraw a given amount from a bank balance', function() {
+    // arrange
+    let bank = new Bank();
+    bank.balance = 10;
+    // assert
+    expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
+  });
+  // it('has a method that will return false when passed an amount greater than the bank balance', function() {
+  //   // arrange
+  //   let transaction = new Transaction();
+  //   // assert
+  //   expect(transaction.confirm_transaction('Deposit',10)).toBe('Deposit of £10 successful');
+  // });
 })
