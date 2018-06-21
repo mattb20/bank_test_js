@@ -22,6 +22,8 @@ module.exports = class Transaction {
     if (this.transaction_type == 'deposit')
     {
       bank.balance += amount;
+    } else if (this.transaction_type == 'withdraw') {
+      bank.balance -= amount;
     }
   };
   confirm_transaction(transaction_type, amount) {
